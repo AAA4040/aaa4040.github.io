@@ -1,32 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azhar Afef | Portfolio</title>
+    <title>Azhar Afef | Backend & DevOps Portfolio</title>
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 50px;
+        /* نظام الألوان والتدرجات المستوحاة من شعار أزهر وموقع HIBP */
+        :root {
+            --bg-dark: #070b12;
+            /* أزرق داكن جداً قريب من السواد */
+            --bg-gradient: radial-gradient(circle at center, #0d1b2a 0%, #050910 100%);
+            --text-main: #e2e8f0;
+            --cyan-accent: #4cc9f0;
+            /* لون السايان المضيء من الشعار */
+            --blue-metallic: #3a0ca3;
+            /* الأزرق المعدني الداكن */
+            --cyan-glow: rgba(76, 201, 240, 0.15);
+            --card-bg: rgba(13, 27, 42, 0.4);
+            --border-color: rgba(76, 201, 240, 0.2);
         }
-        .container { max-width: 800px; margin: auto; }
-        h1 { color: #f5f5f5; font-size: 2.5em; }
-        h2 { color: #d4af37; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        p { font-size: 1.1em; }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* رأس الصفحة - Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+            background: radial-gradient(circle at top, rgba(76, 201, 240, 0.05) 0%, transparent 70%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(76, 201, 240, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--cyan-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .email-badge {
+            display: inline-block;
+            background: rgba(76, 201, 240, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #a3e635;
+            /* لفتة برمجية خفيفة */
+            margin-top: 10px;
+        }
+
+        /* تصميم الأقسام - Sections */
+        section {
+            padding: 50px 0;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            margin-left: 20px;
+            height: 1px;
+            background: linear-gradient(to right, var(--border-color), transparent);
+        }
+
+        /* لوحة محتوى About Me */
+        .about-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .about-card p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: var(--cyan-accent);
+            font-weight: 600;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="container">
-        <h1>Azhar Afef</h1>
-        <h2>About Me</h2>
-        <p>
-            I am an IT graduate specializing in building robust, secure, and scalable backend architectures and automation pipelines. 
-            My engineering philosophy revolves around bridge-building between clean, logical code and highly efficient system infrastructure.
-        </p>
+        <!-- رأس الصفحة المستوحى من هويتك الرقمية وشعارك -->
+        <header>
+            <div class="subtitle">Backend & DevOps Engineer</div>
+            <h1>Azhar Afef</h1>
+            <div class="email-badge">azharafef@gmail.com</div>
+        </header>
+
+        <!-- قسم عني - الأول بالتوالي -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-card">
+                <p>
+                    I am an <span class="highlight">IT graduate</span> specializing in building robust, secure, and
+                    scalable backend architectures and automation pipelines.
+                    My engineering philosophy revolves around bridge-building between clean, logical code and highly
+                    efficient system infrastructure.
+                </p>
+                <br>
+                <p>
+                    With a deep focus on <span class="highlight">Backend Development</span> and <span
+                        class="highlight">DevOps principles</span>, I specialize in designing real-time observability
+                    systems, automating data pipelines, and containerizing distributed applications. I thrive on turning
+                    complex system logs into structured database insights and ensuring that microservices run seamlessly
+                    under any production load.
+                </p>
+            </div>
+        </section>
     </div>
+
 </body>
+
 </html>
