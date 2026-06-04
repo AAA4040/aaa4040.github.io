@@ -114,6 +114,7 @@
             font-weight: 600;
         }
 
+        /* تنسيق المهارات */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -125,19 +126,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            border-color: var(--border-color);
-            box-shadow: 0 5px 20px rgba(76, 201, 240, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .skill-category h3 {
-            margin: 0 0 15px 0;
-            font-size: 1.2rem;
-            color: #ffffff;
         }
 
         .tags-container {
@@ -154,13 +142,91 @@
             border-radius: 6px;
             font-size: 0.85rem;
             font-family: 'Courier New', Courier, monospace;
-            transition: all 0.2s ease;
         }
 
-        .tag:hover {
-            background: rgba(76, 201, 240, 0.1);
-            border-color: var(--cyan-accent);
+        /* تنسيق قسم المشاريع الجديد */
+        .project-featured {
+            background: linear-gradient(145deg, rgba(13, 27, 42, 0.6) 0%, rgba(7, 11, 18, 0.8) 100%);
+            border: 1px solid var(--cyan-accent);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(76, 201, 240, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .badge-main {
+            background: rgba(76, 201, 240, 0.15);
             color: var(--cyan-accent);
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--cyan-accent);
+        }
+
+        .metric-box h4 {
+            margin: 0 0 5px 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .metric-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .projects-grid-secondary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card-secondary {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .project-card-secondary h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .project-card-secondary p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -180,7 +246,7 @@
             <div class="about-card">
                 <p>
                     I am an <span class="highlight">IT graduate</span> from Sana'a University specializing in building
-                    robust, secure, and scalable backend architectures and automation pipelines. My engineering
+                    robust, secure, and scalable backend architectures and automation pipelines[cite: 1]. My engineering
                     philosophy revolves around bridge-building between clean, logical code and highly efficient system
                     infrastructure.
                 </p>
@@ -188,75 +254,113 @@
                 <p>
                     With a deep focus on <span class="highlight">Backend Development</span> and <span
                         class="highlight">DevOps principles</span>, I specialize in designing real-time observability
-                    systems, automating data pipelines, and containerizing distributed applications. I thrive on turning
-                    complex system logs into structured database insights and ensuring that microservices run seamlessly
-                    under any production load.
+                    systems, automating data pipelines, and containerizing distributed applications[cite: 1]. I thrive
+                    on turning complex system logs into structured database insights and ensuring that microservices run
+                    seamlessly under any production load[cite: 1].
                 </p>
             </div>
         </section>
 
-        <!-- قسم المهارات التقنية المطور والشامل بناءً على سيرتك الذاتية -->
+        <!-- قسم المهارات التقنية -->
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
                     <div class="tags-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">C#</span>
+                        <span class="tag">Python</span><span class="tag">PHP</span><span class="tag">C#</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>Backend Frameworks</h3>
                     <div class="tags-container">
-                        <span class="tag">Django</span>
-                        <span class="tag">Laravel</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">REST APIs</span>
+                        <span class="tag">Django</span><span class="tag">Laravel</span><span
+                            class="tag">Flask</span><span class="tag">REST APIs</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>DevOps & Containers</h3>
                     <div class="tags-container">
-                        <span class="tag">Docker</span>
-                        <span class="tag">Docker Compose</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">OpenShift (Intro)</span>
-                        <span class="tag">Microservices Architecture</span>
+                        <span class="tag">Docker</span><span class="tag">Docker Compose</span><span
+                            class="tag">Kubernetes</span><span class="tag">Microservices Architecture</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>Databases & Architecture</h3>
                     <div class="tags-container">
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">SQLi Protection</span>
-                        <span class="tag">ERP System Analysis</span>
+                        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLi
+                            Protection</span><span class="tag">System Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المشاريع الذكي المطور الشفاف -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <!-- 1. المشروع الرئيسي المتكامل والمعدل هندسياً -->
+            <div class="project-featured">
+                <div class="project-header">
+                    <h3 class="project-title">Bio-IT Observability Pipeline</h3>
+                    <span class="badge-main">Production Ready</span>
+                </div>
+                <p style="font-size: 1rem; color: #cbd5e1;">
+                    A real-time, event-driven log monitoring and observability pipeline designed to capture and parse
+                    critical system logs from medical and biological software, automatically syncing records into a
+                    secure database and triggering instant infrastructure-aware alerts.
+                </p>
+
+                <div class="project-metrics">
+                    <div class="metric-box">
+                        <h4>The Challenge</h4>
+                        <p>High CPU utilization due to aggressive loop polling, log data loss during operating system
+                            log-rotations, and high vulnerability to SQL Injection threats via raw unescaped streams.
+                        </p>
+                    </div>
+                    <div class="metric-box">
+                        <h4>The Engineering Fix</h4>
+                        <p>Refactored the core into an event-driven stream using <code>tail -F</code> (reducing idle CPU
+                            load to 0%), implemented full sanitization using regex-based character escaping, and
+                            integrated automated connection error-handling for PostgreSQL persistence layers.</p>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3>Infrastructure & Scripting</h3>
+                <div class="tags-container">
+                    <span class="tag" style="color: var(--cyan-accent);">Linux Bash</span>
+                    <span class="tag" style="color: var(--cyan-accent);">Docker / Compose</span>
+                    <span class="tag" style="color: var(--cyan-accent);">PostgreSQL</span>
+                    <span class="tag" style="color: var(--cyan-accent);">Telegram API</span>
+                    <span class="tag" style="color: var(--cyan-accent);">Secure Scripting</span>
+                </div>
+            </div>
+
+            <!-- 2. المشاريع التطبيقية والأكاديمية المكملة للترسانة -->
+            <div class="projects-grid-secondary">
+
+                <div class="project-card-secondary">
+                    <h3>Sacancom</h3>
+                    <span class="badge-main"
+                        style="background: rgba(163,230,53,0.1); color: #a3e635; font-size: 0.7rem;">In Progress</span>
+                    <p style="margin-top: 10px;">A comprehensive real-estate platform built with Django for property
+                        advertising, featuring advanced search filters, relational database design, and object-oriented
+                        backend controllers[cite: 1].</p>
                     <div class="tags-container">
-                        <span class="tag">Linux Shell Scripting</span>
-                        <span class="tag">Advanced Text Parsing</span>
-                        <span class="tag">Environment Isolation</span>
-                        <span class="tag">Application Security</span>
+                        <span class="tag">Python</span><span class="tag">Django</span><span class="tag">MVC
+                            Pattern</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3>Version Control & Workflow</h3>
+                <div class="project-card-secondary">
+                    <h3>IBM Capstone & Microservices</h3>
+                    <span class="badge-main"
+                        style="background: rgba(255,255,255,0.05); color: #94a3b8; font-size: 0.7rem;">Academic</span>
+                    <p>A collection of applications developed during IBM certification courses, covering
+                        containerization orchestration, serverless execution, and API routing architectures[cite: 1].
+                    </p>
                     <div class="tags-container">
-                        <span class="tag">Git</span>
-                        <span class="tag">GitHub Workflow</span>
-                        <span class="tag">Fault Tolerance</span>
-                        <span class="tag">Serverless Concepts</span>
+                        <span class="tag">Flask</span><span class="tag">Kubernetes</span><span
+                            class="tag">Serverless</span>
                     </div>
                 </div>
 
