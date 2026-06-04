@@ -15,6 +15,8 @@
             --cyan-glow: rgba(76, 201, 240, 0.15);
             --card-bg: rgba(13, 27, 42, 0.4);
             --border-color: rgba(76, 201, 240, 0.2);
+            --gold-accent: #c5a059;
+            /* لون ذهبي ناعم لتمييز الشهادة الكبرى */
         }
 
         body {
@@ -98,15 +100,7 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-        }
-
-        .about-card p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            text-align: justify;
         }
 
         .highlight {
@@ -148,7 +142,6 @@
             border: 1px solid var(--cyan-accent);
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 0 25px rgba(76, 201, 240, 0.1);
             margin-bottom: 30px;
         }
 
@@ -165,7 +158,6 @@
             font-size: 1.5rem;
             color: #ffffff;
             margin: 0;
-            font-weight: 700;
         }
 
         .badge-main {
@@ -189,19 +181,6 @@
             border-left: 3px solid var(--cyan-accent);
         }
 
-        .metric-box h4 {
-            margin: 0 0 5px 0;
-            color: #94a3b8;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
-
-        .metric-box p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #e2e8f0;
-        }
-
         .projects-grid-secondary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -215,76 +194,71 @@
             padding: 20px;
         }
 
-        .project-card-secondary h3 {
-            margin: 0 0 10px 0;
-            color: #ffffff;
-            font-size: 1.2rem;
-        }
-
-        .project-card-secondary p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            margin-bottom: 15px;
-        }
-
         /* تنسيق قسم الشهادات الجديد */
-        .cert-main-card {
-            background: linear-gradient(135deg, rgba(58, 12, 163, 0.2) 0%, rgba(13, 27, 42, 0.5) 100%);
-            border: 1px solid rgba(76, 201, 240, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
+        .certifications-list {
             display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .cert-icon {
-            font-size: 2.5rem;
-            color: #a3e635;
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(13, 27, 42, 0.6);
+        }
+
+        .cert-card.featured {
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            background: linear-gradient(145deg, rgba(20, 25, 35, 0.6) 0%, rgba(13, 27, 42, 0.4) 100%);
+            box-shadow: 0 5px 20px rgba(197, 160, 89, 0.05);
         }
 
         .cert-info h3 {
             margin: 0 0 5px 0;
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             color: #ffffff;
         }
 
-        .cert-info p {
-            margin: 0;
+        .cert-card.featured h3 {
+            color: var(--gold-accent);
+        }
+
+        .cert-meta {
+            font-size: 0.85rem;
             color: #94a3b8;
-            font-size: 0.95rem;
         }
 
-        .cert-list-secondary {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 12px;
+        .cert-meta span {
+            margin-right: 15px;
         }
 
-        .cert-item-secondary {
-            background: rgba(13, 27, 42, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 12px 18px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .cert-item-secondary span {
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #cbd5e1;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-family: monospace;
         }
 
-        .cert-item-secondary .authority {
-            color: var(--cyan-accent);
-            font-size: 0.8rem;
-            font-family: monospace;
+        .cert-card.featured .cert-badge {
+            background: rgba(197, 160, 89, 0.1);
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
         }
     </style>
 </head>
@@ -298,13 +272,13 @@
             <div class="email-badge">azharalafef@gmail.com</div>
         </header>
 
-        <!-- قسم عني -->
+        <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="about-card">
                 <p>
                     I am an <span class="highlight">IT graduate</span> from Sana'a University specializing in building
-                    robust, secure, and scalable backend architectures and automation pipelines. My engineering
+                    robust, secure, and scalable backend architectures and automation pipelines[cite: 1]. My engineering
                     philosophy revolves around bridge-building between clean, logical code and highly efficient system
                     infrastructure.
                 </p>
@@ -319,7 +293,7 @@
             </div>
         </section>
 
-        <!-- قسم المهارات التقنية -->
+        <!-- Technical Skills Section -->
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
@@ -353,7 +327,7 @@
             </div>
         </section>
 
-        <!-- قسم المشاريع -->
+        <!-- Projects Section -->
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="project-featured">
@@ -385,7 +359,6 @@
                     <span class="tag" style="color: var(--cyan-accent);">Docker / Compose</span>
                     <span class="tag" style="color: var(--cyan-accent);">PostgreSQL</span>
                     <span class="tag" style="color: var(--cyan-accent);">Telegram API</span>
-                    <span class="tag" style="color: var(--cyan-accent);">Secure Scripting</span>
                 </div>
             </div>
 
@@ -398,8 +371,7 @@
                         advertising, featuring advanced search filters, relational database design, and object-oriented
                         backend controllers[cite: 1].</p>
                     <div class="tags-container">
-                        <span class="tag">Python</span><span class="tag">Django</span><span class="tag">MVC
-                            Pattern</span>
+                        <span class="tag">Python</span><span class="tag">Django</span>
                     </div>
                 </div>
                 <div class="project-card-secondary">
@@ -410,54 +382,66 @@
                         containerization orchestration, serverless execution, and API routing architectures[cite: 1].
                     </p>
                     <div class="tags-container">
-                        <span class="tag">Flask</span><span class="tag">Kubernetes</span><span
-                            class="tag">Serverless</span>
+                        <span class="tag">Flask</span><span class="tag">Kubernetes</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- قسم الشهادات الاحترافي الجديد -->
+        <!-- قسم الشهادات الجديد والذكي المدمج بناءً على تعديلك المحترف -->
         <section id="certifications">
-            <h2>Certifications & Creeds</h2>
+            <h2>Certifications</h2>
+            <div class="certifications-list">
 
-            <!-- الشهادة الكبرى الختامية للـ 11 كورس -->
-            <div class="cert-main-card">
-                <div class="cert-icon">🎓</div>
-                <div class="cert-info">
-                    <h3>IBM Back-End Development Professional Certificate</h3>
-                    <p>Issued by <strong>IBM</strong> • Consisting of 11 comprehensive foundational and practical
-                        sub-courses[cite: 1].</p>
+                <!-- 1. الشهادة الكبرى لـ IBM المميزة بلون ذهبي ناعم -->
+                <div class="cert-card featured">
+                    <div class="cert-info">
+                        <h3>IBM Back-End Development Professional Certificate</h3>
+                        <div class="cert-meta">
+                            <span><strong>Issuer:</strong> IBM</span>
+                            <span><strong>Date:</strong> Feb 27, 2026</span>
+                        </div>
+                    </div>
+                    <div class="cert-badge">Online Professional (11 Courses Bundled)</div>
                 </div>
-            </div>
 
-            <!-- تفصيل المسارات التطبيقية المرموقة من سيرتك الذاتية -->
-            <ul class="cert-list-secondary">
-                <li class="cert-item-secondary">
-                    <span>Application Security for Developers & DevOps</span>
-                    <span class="authority">IBM</span>
-                </li>
-                <li class="cert-item-secondary">
-                    <span>Microservices & Serverless Development</span>
-                    <span class="authority">IBM</span>
-                </li>
-                <li class="cert-item-secondary">
-                    <span>Containers with Docker, Kubernetes & OpenShift</span>
-                    <span class="authority">IBM</span>
-                </li>
-                <li class="cert-item-secondary">
-                    <span>Django Application Development with SQL</span>
-                    <span class="authority">IBM</span>
-                </li>
-                <li class="cert-item-secondary">
-                    <span>Linux Commands & Shell Scripting Basics</span>
-                    <span class="authority">IBM</span>
-                </li>
-                <li class="cert-item-secondary">
-                    <span>Integrated System Analysis (ERP Validation)</span>
-                    <span class="authority">DT&T Center</span>
-                </li>
-            </ul>
+                <!-- 2. شهادة هندسة الأنظمة وتحليلها -->
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3>Integrated System Analysis (ERP) for GASSP</h3>
+                        <div class="cert-meta">
+                            <span><strong>Issuer:</strong> Digital Transformation Center (DT&T)</span>
+                            <span><strong>Type:</strong> Blended Learning</span>
+                        </div>
+                    </div>
+                    <div class="cert-badge">System Analysis</div>
+                </div>
+
+                <!-- 3. شهادة الذكاء الاصطناعي وبايثون من جامعة صنعاء -->
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3>Python Training, Artificial Intelligence & Data Science</h3>
+                        <div class="cert-meta">
+                            <span><strong>Issuer:</strong> Sana'a University's Presidency & Training Center</span>
+                            <span><strong>Date:</strong> Sep 08, 2024</span>
+                        </div>
+                    </div>
+                    <div class="cert-badge">AI & Data Science</div>
+                </div>
+
+                <!-- 4. شهادة تصميم الويب بـ لارافيل حضورياً -->
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3>Web Design with Laravel Framework</h3>
+                        <div class="cert-meta">
+                            <span><strong>Issuer:</strong> Sana'a University's Presidency & Training Center</span>
+                            <span><strong>Date:</strong> Jun 08, 2024</span>
+                        </div>
+                    </div>
+                    <div class="cert-badge">Presential</div>
+                </div>
+
+            </div>
         </section>
     </div>
 
