@@ -114,7 +114,6 @@
             font-weight: 600;
         }
 
-        /* تنسيق المهارات */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -144,7 +143,6 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        /* تنسيق قسم المشاريع الجديد */
         .project-featured {
             background: linear-gradient(145deg, rgba(13, 27, 42, 0.6) 0%, rgba(7, 11, 18, 0.8) 100%);
             border: 1px solid var(--cyan-accent);
@@ -228,6 +226,66 @@
             color: #94a3b8;
             margin-bottom: 15px;
         }
+
+        /* تنسيق قسم الشهادات الجديد */
+        .cert-main-card {
+            background: linear-gradient(135deg, rgba(58, 12, 163, 0.2) 0%, rgba(13, 27, 42, 0.5) 100%);
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: #a3e635;
+        }
+
+        .cert-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .cert-info p {
+            margin: 0;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .cert-list-secondary {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 12px;
+        }
+
+        .cert-item-secondary {
+            background: rgba(13, 27, 42, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 12px 18px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .cert-item-secondary span {
+            color: #cbd5e1;
+        }
+
+        .cert-item-secondary .authority {
+            color: var(--cyan-accent);
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
     </style>
 </head>
 
@@ -246,7 +304,7 @@
             <div class="about-card">
                 <p>
                     I am an <span class="highlight">IT graduate</span> from Sana'a University specializing in building
-                    robust, secure, and scalable backend architectures and automation pipelines[cite: 1]. My engineering
+                    robust, secure, and scalable backend architectures and automation pipelines. My engineering
                     philosophy revolves around bridge-building between clean, logical code and highly efficient system
                     infrastructure.
                 </p>
@@ -295,11 +353,9 @@
             </div>
         </section>
 
-        <!-- قسم المشاريع الذكي المطور الشفاف -->
+        <!-- قسم المشاريع -->
         <section id="projects">
             <h2>Featured Projects</h2>
-
-            <!-- 1. المشروع الرئيسي المتكامل والمعدل هندسياً -->
             <div class="project-featured">
                 <div class="project-header">
                     <h3 class="project-title">Bio-IT Observability Pipeline</h3>
@@ -310,7 +366,6 @@
                     critical system logs from medical and biological software, automatically syncing records into a
                     secure database and triggering instant infrastructure-aware alerts.
                 </p>
-
                 <div class="project-metrics">
                     <div class="metric-box">
                         <h4>The Challenge</h4>
@@ -325,7 +380,6 @@
                             integrated automated connection error-handling for PostgreSQL persistence layers.</p>
                     </div>
                 </div>
-
                 <div class="tags-container">
                     <span class="tag" style="color: var(--cyan-accent);">Linux Bash</span>
                     <span class="tag" style="color: var(--cyan-accent);">Docker / Compose</span>
@@ -335,9 +389,7 @@
                 </div>
             </div>
 
-            <!-- 2. المشاريع التطبيقية والأكاديمية المكملة للترسانة -->
             <div class="projects-grid-secondary">
-
                 <div class="project-card-secondary">
                     <h3>Sacancom</h3>
                     <span class="badge-main"
@@ -350,7 +402,6 @@
                             Pattern</span>
                     </div>
                 </div>
-
                 <div class="project-card-secondary">
                     <h3>IBM Capstone & Microservices</h3>
                     <span class="badge-main"
@@ -363,8 +414,50 @@
                             class="tag">Serverless</span>
                     </div>
                 </div>
-
             </div>
+        </section>
+
+        <!-- قسم الشهادات الاحترافي الجديد -->
+        <section id="certifications">
+            <h2>Certifications & Creeds</h2>
+
+            <!-- الشهادة الكبرى الختامية للـ 11 كورس -->
+            <div class="cert-main-card">
+                <div class="cert-icon">🎓</div>
+                <div class="cert-info">
+                    <h3>IBM Back-End Development Professional Certificate</h3>
+                    <p>Issued by <strong>IBM</strong> • Consisting of 11 comprehensive foundational and practical
+                        sub-courses[cite: 1].</p>
+                </div>
+            </div>
+
+            <!-- تفصيل المسارات التطبيقية المرموقة من سيرتك الذاتية -->
+            <ul class="cert-list-secondary">
+                <li class="cert-item-secondary">
+                    <span>Application Security for Developers & DevOps</span>
+                    <span class="authority">IBM</span>
+                </li>
+                <li class="cert-item-secondary">
+                    <span>Microservices & Serverless Development</span>
+                    <span class="authority">IBM</span>
+                </li>
+                <li class="cert-item-secondary">
+                    <span>Containers with Docker, Kubernetes & OpenShift</span>
+                    <span class="authority">IBM</span>
+                </li>
+                <li class="cert-item-secondary">
+                    <span>Django Application Development with SQL</span>
+                    <span class="authority">IBM</span>
+                </li>
+                <li class="cert-item-secondary">
+                    <span>Linux Commands & Shell Scripting Basics</span>
+                    <span class="authority">IBM</span>
+                </li>
+                <li class="cert-item-secondary">
+                    <span>Integrated System Analysis (ERP Validation)</span>
+                    <span class="authority">DT&T Center</span>
+                </li>
+            </ul>
         </section>
     </div>
 
