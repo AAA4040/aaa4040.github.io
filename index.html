@@ -16,7 +16,6 @@
             --card-bg: rgba(13, 27, 42, 0.4);
             --border-color: rgba(76, 201, 240, 0.2);
             --gold-accent: #c5a059;
-            /* لون ذهبي ناعم لتمييز الشهادة الكبرى */
         }
 
         body {
@@ -194,7 +193,6 @@
             padding: 20px;
         }
 
-        /* تنسيق قسم الشهادات الجديد */
         .certifications-list {
             display: flex;
             flex-direction: column;
@@ -211,18 +209,11 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .cert-card:hover {
-            border-color: rgba(255, 255, 255, 0.1);
-            background: rgba(13, 27, 42, 0.6);
         }
 
         .cert-card.featured {
             border: 1px solid rgba(197, 160, 89, 0.3);
             background: linear-gradient(145deg, rgba(20, 25, 35, 0.6) 0%, rgba(13, 27, 42, 0.4) 100%);
-            box-shadow: 0 5px 20px rgba(197, 160, 89, 0.05);
         }
 
         .cert-info h3 {
@@ -259,6 +250,45 @@
             background: rgba(197, 160, 89, 0.1);
             border-color: var(--gold-accent);
             color: var(--gold-accent);
+        }
+
+        /* تنسيق قسم التذييل المهني المضاف حديثاً */
+        footer {
+            margin-top: 60px;
+            padding: 40px 0 20px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        .footer-link:hover {
+            color: var(--cyan-accent);
+            background: rgba(76, 201, 240, 0.05);
+        }
+
+        .footer-credits {
+            font-size: 0.85rem;
+            color: #64748b;
         }
     </style>
 </head>
@@ -388,12 +418,10 @@
             </div>
         </section>
 
-        <!-- قسم الشهادات الجديد والذكي المدمج بناءً على تعديلك المحترف -->
+        <!-- Certifications Section -->
         <section id="certifications">
             <h2>Certifications</h2>
             <div class="certifications-list">
-
-                <!-- 1. الشهادة الكبرى لـ IBM المميزة بلون ذهبي ناعم -->
                 <div class="cert-card featured">
                     <div class="cert-info">
                         <h3>IBM Back-End Development Professional Certificate</h3>
@@ -404,8 +432,6 @@
                     </div>
                     <div class="cert-badge">Online Professional (11 Courses Bundled)</div>
                 </div>
-
-                <!-- 2. شهادة هندسة الأنظمة وتحليلها -->
                 <div class="cert-card">
                     <div class="cert-info">
                         <h3>Integrated System Analysis (ERP) for GASSP</h3>
@@ -416,8 +442,6 @@
                     </div>
                     <div class="cert-badge">System Analysis</div>
                 </div>
-
-                <!-- 3. شهادة الذكاء الاصطناعي وبايثون من جامعة صنعاء -->
                 <div class="cert-card">
                     <div class="cert-info">
                         <h3>Python Training, Artificial Intelligence & Data Science</h3>
@@ -428,8 +452,6 @@
                     </div>
                     <div class="cert-badge">AI & Data Science</div>
                 </div>
-
-                <!-- 4. شهادة تصميم الويب بـ لارافيل حضورياً -->
                 <div class="cert-card">
                     <div class="cert-info">
                         <h3>Web Design with Laravel Framework</h3>
@@ -440,9 +462,21 @@
                     </div>
                     <div class="cert-badge">Presential</div>
                 </div>
-
             </div>
         </section>
+
+        <!-- قسم التذييل المهني الجديد (Footer) -->
+        <footer>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/azhar-afef-728895399" class="footer-link" target="_blank">🔗
+                    LinkedIn</a>
+                <a href="https://github.com/AAA4040" class="footer-link" target="_blank">💻 GitHub</a>
+                <a href="mailto:azharalafef@gmail.com" class="footer-link">📧 Email</a>
+            </div>
+            <div class="footer-credits">
+                &copy; 2026 Azhar Afef. Built with engineering rigor.
+            </div>
+        </footer>
     </div>
 
 </body>
